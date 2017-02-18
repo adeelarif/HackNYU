@@ -5,34 +5,35 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
-(function(){
+(function () {
 
-  var parallax = document.querySelectorAll("#page1"),
-      speed = 0.5;
+    var parallax = document.querySelectorAll("#page1"),
+        speed = 0.5;
 
-  window.onscroll = function(){
-    [].slice.call(parallax).forEach(function(el,i){
+    window.onscroll = function () {
+        [].slice.call(parallax).forEach(function (el, i) {
 
-      var windowYOffset = window.pageYOffset,
-          elBackgrounPos = "50% " + (-(windowYOffset * speed)) + "px";
+            var windowYOffset = window.pageYOffset,
+                elBackgrounPos = "50% " + (-(windowYOffset * speed)) + "px";
 
-      el.style.backgroundPosition = elBackgrounPos;
+            el.style.backgroundPosition = elBackgrounPos;
 
-    });
-  };
+        });
+    };
 
 })();
-$(document).ready(function(){
-	$(".scroll").click(function() {
+$(document).ready(function () {
+    $(".scroll").click(function () {
         $('html,body').animate({
-            scrollTop: $("#page2").offset().top}, 1500);
+            scrollTop: $("#page2").offset().top
+        }, 1500);
     });
 });
-$(window).scroll(function() {
-	if ($(this).scrollTop() > 600) {
-		$('.hamspan').css("position", "fixed");
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 600) {
+        $('.hamspan').css("position", "fixed");
 
-	} else { 
-		$('.hamspan').css("position", "absolute");
-	} 
+    } else {
+        $('.hamspan').css("position", "absolute");
+    }
 });
