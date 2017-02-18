@@ -8,3 +8,11 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database;
+
+function writeUserData(userId, name, email, password) {
+    firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email,
+        password : password
+    });
+}
